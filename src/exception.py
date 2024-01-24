@@ -1,5 +1,5 @@
 import sys # any exception that is basically getting controlled the sys library automatically will have that information
-from src.logger import logging
+from src.logger import logging # used for saving the message in the logs folder
 
 
 # This is the function that define how your messsage will look like inside the file with respect to custom exception
