@@ -101,6 +101,7 @@ class DataTransformation:
                 f"Applying preprocessing object on training dataframe and testing dataframe."
             )
 
+            # Here we are calling the pickle file that are saved in the artifacts folder and then we are doing fit_transform on the training dataset and tranform on the test dataset
             input_feature_train_arr=preprocessing_obj.fit_transform(input_feature_train_df)
             input_feature_test_arr=preprocessing_obj.transform(input_feature_test_df)
 
@@ -112,7 +113,7 @@ class DataTransformation:
             logging.info(f"Saved preprocessing object.")
 
             # With the help of this code in data transformation we are saving this pickle name in the hard disk
-            save_object(
+            save_object( # save_object is the function that we will create in utils
                 file_path=self.data_transformation_config.preprocessor_obj_file_path,
                 obj=preprocessing_obj
             )

@@ -13,6 +13,8 @@ from dataclasses import dataclass
 
 from src.components.data_transformation import DataTransformation
 from src.components.data_transformation import DataTransformationConfig
+from src.components.model_trainer import ModelTrainerConfig
+from src.components.model_trainer import ModelTrainer
 
 
 
@@ -70,7 +72,7 @@ if __name__=="__main__":
 
     # Calling the DataTranformation class
     data_transformation=DataTransformation()
-    train_arr, test_arr, _=data_transformation.initiate_data_transformation(train_data, test_data)
+    train_arr, test_arr, _=data_transformation.initiate_data_transformation(train_data, test_data) # As we have already created the pickle file so we don't want to assign the last one so we have given _
 
-    #modeltrainer=ModelTrainer()
-    #print(modeltrainer.initiate_data_trainer(train_arr, test_arr))
+    modeltrainer=ModelTrainer()
+    print(modeltrainer.initiate_model_trainer(train_arr, test_arr))
